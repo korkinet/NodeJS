@@ -1,0 +1,19 @@
+[{
+  "name": "Product 1",
+  "itemsInStock": 200
+},{
+  "name": "Product 2",
+  "itemsInStock": 123
+},{
+  "name": "Product 3",
+  "itemsInStock": 91456
+},{
+  "name": "Product 4",
+  "itemsInStock": 6735
+},{
+  "name": "Product 5",
+  "itemsInStock": 894
+},{
+  "name": "Product 6",
+  "itemsInStock": 9
+}]
