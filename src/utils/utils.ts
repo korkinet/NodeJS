@@ -30,18 +30,6 @@ function getById<T extends Product | Category>(entities: T[], id: string) {
   return Promise.reject(new Error('Not Found'));
 }
 
-// function getById(req: Request, res: Response, next: NextFunction, entities: (Product | Category)[]) {
-//   const index = entities.findIndex(e => e.id === req.params.id);
-//   if (~index) {
-//     res.locals.index = index;
-//     res.locals.entity = entities[index];
-//     next();
-//     return;
-//   }
-
-//   next(new Error('Not found'));
-// }
-
 export function getByIdHandler(fn: (id: string) => Promise<{entity: Product | Category, index: number}>) {
   const handler: RouteHandler = (req, res, next) => {
     fn(req.params.id)
