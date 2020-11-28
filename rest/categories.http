@@ -1,0 +1,31 @@
+GET http://localhost:9000/api/categories
+
+###
+
+GET http://localhost:9000/api/categories/30b3b095-0de1-4d2e-87b2-32cdc2e92473
+
+###
+
+GET http://localhost:9000/api/categories/30b3b095-0de1-4d2e-87b2-32cdc2e92473/products
+
+###
+
+POST http://localhost:9000/api/categories
+Content-Type: application/json
+
+{
+  "name": "123"
+}
+
+###
+
+PUT http://localhost:9000/api/categories/585606ee-3b70-4e1f-a95d-6321da0dfe79
+Content-Type: application/json
+
+{
+  "name": "123 updated"
+}
+
+###
+
+DELETE http://localhost:9000/api/categories/585606ee-3b70-4e1f-a95d-6321da0dfe79

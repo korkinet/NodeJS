@@ -1,0 +1,29 @@
+GET http://localhost:9000/api/products
+
+###
+
+GET http://localhost:9000/api/products/7bf31d1e-de43-40ac-917f-3509b054fdf0
+
+###
+
+POST http://localhost:9000/api/products
+Content-Type: application/json
+
+{
+  "name": "123",
+  "itemsInStock": 200
+}
+
+###
+
+PUT http://localhost:9000/api/products/97dcd8b2-9803-4008-bf95-b110c91e2bed
+Content-Type: application/json
+
+{
+  "name": "123",
+  "itemsInStock": 100
+}
+
+###
+
+DELETE http://localhost:9000/api/products/97dcd8b2-9803-4008-bf95-b110c91e2bed
