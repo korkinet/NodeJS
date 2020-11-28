@@ -10,7 +10,11 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.listen(9000, () => {
+if (!process.env.APP_PORT) {
+  throw new Error('No app port defined');
+}
+
+app.listen(process.env.APP_PORT, () => {
   app.get('/', (_, res) => res.send({
     name: 'Coolest API ever',
     version: '1.0'
