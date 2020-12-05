@@ -1,5 +1,7 @@
+@token = 123
+
 GET http://localhost:9000/api/products
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiJ6eXh3Iiwicm9sZXMiOlsiYWRtaW4iXSwiaWF0IjoxNjA3MTcxOTE1fQ.kTV9WTTYg_aLwRnkZyGbeyQ8sv8mNEmErgjnfgjaABw
+Authorization: Bearer {{token}}
 
 ###
 
@@ -9,7 +11,7 @@ GET http://localhost:9000/api/products/7bf31d1e-de43-40ac-917f-3509b054fdf0
 
 POST http://localhost:9000/api/products
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpZXdlcjEiLCJwYXNzd29yZCI6ImFiY2QiLCJyb2xlcyI6WyJ2aWV3ZXIiXSwiaWF0IjoxNjA3MTcyMzkwfQ.dDVoFrSlbuSpYtUmBGp43BLYQZPES7IcktHxRh8lJzo
+Authorization: Bearer {{token}}
 
 {
   "name": "123",
