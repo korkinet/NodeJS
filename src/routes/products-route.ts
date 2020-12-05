@@ -4,6 +4,8 @@ import * as uuid from 'uuid';
 
 import { products } from '../db';
 import { checkId, checkName, getByIdHandler, getProductById } from '../utils/utils';
+import { auth, autorize } from '../auth';
+import { Role } from '../models';
 
 const logger = createLogger('Products');
 
@@ -24,7 +26,7 @@ innerRouter.get('/:id', checkId, getByIdHandler(id => getProductById(id)), (req,
 });
 
 // Create one
-innerRouter.post('', checkName, (req, res) => {
+innerRouter.post('', autorize([Role.Admin]), checkName, (req, res) => {
   const newProduct = req.body;
   newProduct.id = uuid.v4();
   products.push(newProduct);
@@ -33,19 +35,19 @@ innerRouter.post('', checkName, (req, res) => {
 });
 
 // Update one
-innerRouter.put('/:id', checkId, checkName, getByIdHandler(id => getProductById(id)), (req, res) => {
+innerRouter.put('/:id', autorize([Role.Admin]), checkId, checkName, getByIdHandler(id => getProductById(id)), (req, res) => {
   const updatedProduct = Object.assign(res.locals.entity, req.body);
   logger.info('Product was updated', { updatedProduct });
   res.send(updatedProduct);
 });
 
 // Delete one
-innerRouter.delete('/:id', checkId, getByIdHandler(id => getProductById(id)), (req, res) => {
+innerRouter.delete('/:id', autorize([Role.Admin]), checkId, getByIdHandler(id => getProductById(id)), (req, res) => {
   products.splice(res.locals.index, 1);
   logger.info(`Product ${req.params.id} was deleted`);
   res.sendStatus(204);
 });
 
-productsRouter.use('/products', innerRouter);
+productsRouter.use('/products', auth(), innerRouter);
 
 export default productsRouter;

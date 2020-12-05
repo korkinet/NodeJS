@@ -1,0 +1,17 @@
+POST http://localhost:9000/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "zyxw"
+}
+
+###
+
+POST http://localhost:9000/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "viewer1",
+  "password": "abcd"
+}

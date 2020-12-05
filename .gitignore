@@ -30,7 +30,6 @@ typings/
 .yarn-integrity
 
 # Assets
-public/
 dist/
 
 # Coverage reports

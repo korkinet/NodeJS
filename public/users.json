@@ -1,0 +1,13 @@
+[{
+  "username": "viewer1",
+  "password": "abcd",
+  "roles": ["viewer"]
+}, {
+  "username": "viewer2",
+  "password": "efgh",
+  "roles": ["viewer"]
+}, {
+  "username": "admin",
+  "password": "zyxw",
+  "roles": ["admin"]
+}]
